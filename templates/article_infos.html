@@ -1,13 +1,22 @@
 <footer class="post-info">
-    <abbr class="published" title="{{ article.date.isoformat() }}">
-        Published: {{ article.locale_date }}
-    </abbr>
+<ul>
+    <li class="published" title="{{ article.date.isoformat() }}">
+        <span>Date:</span>{{ article.date.strftime("%Y年 %B%d日(%A) %p %I:%M:%S") }}
+    </li>
     {% if article.modified %}
-    <br />
-    <abbr class="modified" title="{{ article.modified.isoformat() }}">
-        Updated: {{ article.locale_modified }}
-    </abbr>
+    <!--<br />-->
+    <li class="modified" title="{{ article.modified.isoformat() }}">
+        <span>Updated:</span>{{ article.modified.strftime("%Y年 %B%d日(%A) %p %I:%M:%S") }}
+    </li>
     {% endif %}
-<p>In <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>.</p>
-{% include 'taglist.html' %}
+    {% if article.authors %}
+    <li class="vcard author">
+        <span>Author:</span>{% for author in article.authors %}
+            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+        {% endfor %}
+    </li>
+    {% endif %}
+    {% include 'taglist.html' %}
+    <li><span>Category:</span><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></li>
+</ul>
 </footer><!-- /.post-info -->

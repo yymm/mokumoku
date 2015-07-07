@@ -1,0 +1,69 @@
+{% if article %}
+    <div class="sns">
+        <h2><span class="glyphicon glyphicon-share"></span> Share</h2>
+            {% include 'sns.html' %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if DETAILS %}
+    <div class="blogroll">
+        <h2><span class="glyphicon glyphicon-pushpin"></span> About</h2>
+        <ul>
+        {% for item in DETAILS %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    </div><!-- /.blogroll -->
+{% endif %}
+
+{% if DISPLAY_CATEGORIES_ON_MENU %}
+    <div class="category">
+        <h2><span class="glyphicon glyphicon-th-list"></span> Category</h2>
+        <ul>
+		{% for cat, null in categories %}
+			<li>
+				<a href="{{ SITEURL }}/{{ cat.url }}">
+                {% if CATEGORIES %}
+				    {% for category, id, color in CATEGORIES %}
+				    	{% if cat == category %}
+				    	<span class="glyphicon glyphicon-{{ id }}" aria-hidden="true" style="color: {{ color }};"></span>
+				    	{% endif %}
+				    {% endfor %}
+				    {{ cat }}
+				{% endif %}
+				</a>
+			</li>
+		{% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+    <div class="social">
+        <h2><span class="glyphicon glyphicon-sunglasses"></span> Social</h2>
+        <ul>
+            {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+            {% endfor %}
+
+            {% if FEED_ALL_ATOM %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" target="_blank" type="application/atom+xml" rel="alternate">atom feed</a></li>
+            {% endif %}
+            {% if FEED_ALL_RSS %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" target="_blank" type="application/rss+xml" rel="alternate">rss feed</a></li>
+            {% endif %}
+        </ul>
+    </div><!-- /.social -->
+{% endif %}
+
+{% if DISPLAY_PAGES_ON_MENU and PAGES -%}
+    <div>
+        <h2><span class="glyphicon glyphicon-paperclip"></span> Pages</h2>
+        <ul>
+        {% for pg in PAGES %}
+            <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div><!-- /.pages -->
+{% endif %}
