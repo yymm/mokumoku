@@ -61,6 +61,27 @@
     </div>
 {% endif %}
 
+{% if TAG_CLOUD_STEPS %}
+    <div class="tags">
+        <h2><span class="glyphicon glyphicon-paperclip"></span> Tags</h2>
+        <ul>
+        {% for tag, articles in tags|sort %}
+            {% if article %}
+                {% if articles[0].category == article.category %}
+                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+                {% endif %}
+            {% elif category %}
+                {% if articles[0].category == category %}
+                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+                {% endif %}
+            {% else %}
+                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div><!-- /.social -->
+{% endif %}
+
 {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
     <div class="social">
         <h2><span class="glyphicon glyphicon-sunglasses"></span> Social</h2>
@@ -68,7 +89,6 @@
             {% for name, link in SOCIAL %}
             <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
             {% endfor %}
-
             {% if FEED_ALL_ATOM %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" target="_blank" type="application/atom+xml" rel="alternate">atom feed</a></li>
             {% endif %}
