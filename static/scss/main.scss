@@ -149,6 +149,16 @@
 	-webkit-justify-content: space-between;
 	padding: 10px;
 }
+#extras .bs-component .recently li p {
+	font-size: small;
+}
+#extras .bs-component .recently li a {
+	font-size: large;
+	color: #007;
+}
+#extras .bs-component .recently li a:hover {
+	color: #2196f3;
+}
 
 #extras .social {
 	float: right;

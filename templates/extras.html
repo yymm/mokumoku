@@ -39,6 +39,28 @@
     </div>
 {% endif %}
 
+{% if ALWAYS_MODIFIED %}
+    <div class="recently">
+        <h2><span class="glyphicon glyphicon-bullhorn"></span> Recently</h2>
+        <ul>
+            {% for article in articles|sort(reverse=True) %}
+			<li>
+                <p>{{ article.date.strftime("%Y年 %B%d日 %p %I:%M") }}<br />
+			        {% for category, id, color in CATEGORIES %}
+			        	{% if article.category == category %}
+				        <span class="icon-category glyphicon glyphicon-{{ id }}" aria-hidden="true" style="color: {{ color }};"></span>
+			        	{% endif %}
+                    {% endfor %}
+                    <a href="{{ SITEURL }}/{{ article.url }}">
+                        {{ article.title|striptags }}
+                    </a>
+                </p>
+			</li>
+		    {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
 {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
     <div class="social">
         <h2><span class="glyphicon glyphicon-sunglasses"></span> Social</h2>
