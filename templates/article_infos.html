@@ -4,10 +4,12 @@
         <span>Date:</span>{{ article.date.strftime("%Y年 %B%d日(%A) %p %I:%M:%S") }}
     </li>
     {% if article.modified %}
-    <!--<br />-->
-    <li class="modified" title="{{ article.modified.isoformat() }}">
-        <span>Updated:</span>{{ article.modified.strftime("%Y年 %B%d日(%A) %p %I:%M:%S") }}
-    </li>
+        {% if not article.modified == article.date %}
+        <!--<br />-->
+        <li class="modified" title="{{ article.modified.isoformat() }}">
+            <span>Updated:</span>{{ article.modified.strftime("%Y年 %B%d日(%A) %p %I:%M:%S") }}
+        </li>
+        {% endif %}
     {% endif %}
     {% if article.authors %}
     <li class="vcard author">
