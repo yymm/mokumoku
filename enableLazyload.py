@@ -35,7 +35,7 @@ def injectImgClass(file):
 
     return True
 
-path = "output"
+path = "../output"
 
 for root, dirs, files in os.walk(path):
     for file in files:

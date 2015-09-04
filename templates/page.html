@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{% endblock %}
+{% block custom_css %}
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ page.slug }}.css" />
+{% endblock %}
+{% block custom_js %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/{{ page.slug }}.js"></script>
+{% endblock %}
 {% block content %}
     <div class="page-header">
         <h1 class="entry-title">{{ page.title }}</h1>

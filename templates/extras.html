@@ -43,7 +43,7 @@
     <div class="recently">
         <h2><span class="glyphicon glyphicon-bullhorn"></span> Recently</h2>
         <ul>
-            {% for article in articles|sort(reverse=True) %}
+            {% for article in articles|sort(reverse=True,attribute='date') %}
 			<li>
                 <p>{{ article.date.strftime("%Y年 %B%d日 %p %I:%M") }}<br />
 			        {% for category, id, color in CATEGORIES %}
@@ -63,7 +63,7 @@
 
 {% if TAG_CLOUD_STEPS %}
     <div class="tags">
-        <h2><span class="glyphicon glyphicon-paperclip"></span> Tags</h2>
+        <h2><span class="glyphicon glyphicon-tags"></span> Tags</h2>
         <ul>
         {% for tag, articles in tags|sort %}
             {% if article %}
