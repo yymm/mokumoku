@@ -261,9 +261,13 @@ table {
 
 .entry-content {
   h1 {
-    margin: 40px 0 20px;
-    padding: 0 0 5px;
-	border-bottom: 10px solid #ddd;
+    margin: 40px 0 40px;
+	/*padding: 0 0 5px;*/
+	border-bottom: 10px solid #ccc;
+	padding: 10px 20px 10px;
+	/*background-color: #555;*/
+	/*color: #ddd;*/
+	/*border-radius: 10px;*/
   }
   h1:before,
   h2:before,

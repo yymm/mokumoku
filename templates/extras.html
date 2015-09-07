@@ -44,18 +44,20 @@
         <h2><span class="glyphicon glyphicon-bullhorn"></span> Recently</h2>
         <ul>
             {% for article in articles|sort(reverse=True,attribute='date') %}
-			<li>
-                <p>{{ article.date.strftime("%Y年 %B%d日 %p %I:%M") }}<br />
-			        {% for category, id, color in CATEGORIES %}
-			        	{% if article.category == category %}
-				        <span class="icon-category glyphicon glyphicon-{{ id }}" aria-hidden="true" style="color: {{ color }};"></span>
-			        	{% endif %}
-                    {% endfor %}
-                    <a href="{{ SITEURL }}/{{ article.url }}">
-                        {{ article.title|striptags }}
-                    </a>
-                </p>
-			</li>
+                {% if loop.index0 < 5 %}
+			    <li>
+                    <p>{{ article.date.strftime("%Y年 %B%d日 %p %I:%M") }}<br />
+			            {% for category, id, color in CATEGORIES %}
+			            	{% if article.category == category %}
+			    	        <span class="icon-category glyphicon glyphicon-{{ id }}" aria-hidden="true" style="color: {{ color }};"></span>
+			            	{% endif %}
+                        {% endfor %}
+                        <a href="{{ SITEURL }}/{{ article.url }}">
+                            {{ article.title|striptags }}
+                        </a>
+                    </p>
+			    </li>
+		        {% endif %}
 		    {% endfor %}
         </ul>
     </div>
