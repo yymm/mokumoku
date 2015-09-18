@@ -9,11 +9,9 @@
 {% if DETAILS %}
     <div class="blogroll">
         <h2><span class="glyphicon glyphicon-pushpin"></span> About</h2>
-        <ul>
         {% for item in DETAILS %}
-            <li>{{ item }}</li>
+        <p>{{ item }}</p>
         {% endfor %}
-        </ul>
     </div><!-- /.blogroll -->
 {% endif %}
 
