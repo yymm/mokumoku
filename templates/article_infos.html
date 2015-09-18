@@ -1,13 +1,13 @@
 <footer class="post-info">
 <ul>
     <li class="published" title="{{ article.date.isoformat() }}">
-        <span>Date:</span>{{ article.date.strftime("%A %d %B %Y") }}
+        <span>Date:</span>{{ article.date.strftime("%A %d %B %Y (%p %I:%M:%S)") }}
     </li>
     {% if article.modified %}
         {% if not article.modified == article.date %}
         <!--<br />-->
         <li class="modified" title="{{ article.modified.isoformat() }}">
-            <span>Updated:</span>{{ article.modified.strftime("%A %d %B %Y") }}
+            <span>Updated:</span>{{ article.modified.strftime("%A %d %B %Y (%p %I:%M:%S)") }}
         </li>
         {% endif %}
     {% endif %}
