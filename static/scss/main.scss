@@ -35,6 +35,10 @@
 }
 
 
+#content ul {
+	list-style: circle;
+	margin: 0 0 0 1.5em;
+}
 #content article .entry-title a {
 	text-decoration: none;
 }
@@ -148,7 +152,6 @@
 	-webkit-flex-wrap: wrap;
 	-webkit-justify-content: space-between;
 	padding: 10px;
-	list-style: none;
 }
 #extras .bs-component .recently li p {
 	font-size: small;
