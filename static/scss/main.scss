@@ -7,12 +7,10 @@
 	background-position: center bottom;
 	background-repeat: no-repeat;
 }
-
 #contenthead {
 	position: relative;
 	height: 300px;
 }
-
 #look {
 	position: absolute;
 	top: 120px;
@@ -24,17 +22,12 @@
 @media (max-width: 990px) {
 	#look { left: 30px; }
 }
-
-
-
 #contentinfo {
 	height: 200px;
 	background-image: url("../img/footer.svg");
 	background-position: center top;
 	background-repeat: no-repeat;
 }
-
-
 #content ul {
 	list-style: circle;
 	margin: 0 0 0 1.5em;
@@ -237,7 +230,6 @@
     transform: scale(1.2);
   }
 }
-
 table {
   padding: 0; }
   table tr {
