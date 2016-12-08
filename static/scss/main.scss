@@ -21,7 +21,8 @@
 }
 @media (max-width: 990px) {
 	#look { left: 30px; display: none; }
-  #banner { background-image: none; }
+  #banner { background-image: none; height: 50px; }
+  #contenthead { height: 50px; }
 }
 #contentinfo {
 	height: 200px;
