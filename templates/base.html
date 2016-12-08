@@ -41,19 +41,17 @@
 
     <!--Honoka Bootstrap-->
     <div class="container">
-        <div class="row">
-            <div id="content" class="col-lg-12">
-                <div class="bs-component">
-                {% block content %}
-                {% endblock %}
-                </div><!-- /.bs-component -->
-            </div>
-            <div id="extras" class="col-lg-12">
-                <div class="bs-component">
-                {% include 'extras.html' %}
-                </div><!-- /.bs-component -->
-            </div><!-- /#extras -->
-        </div><!--./row -->
+        <div id="content" class="row">
+            <div class="bs-component">
+            {% block content %}
+            {% endblock %}
+            </div><!-- /.bs-component -->
+        </div>
+        <div id="extras" class="row">
+            <div class="bs-component">
+            {% include 'extras.html' %}
+            </div><!-- /.bs-component -->
+        </div><!-- /#extras -->
     </div><!--./container -->
     <!--Honoka Bootstrap end -->
 

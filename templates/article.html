@@ -20,22 +20,21 @@
 
     <div class="entry-content">
       {% include 'article_infos.html' %}
-
-      <div class="article-ad">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- responsive -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8481391240785119"
-             data-ad-slot="3238871784"
-             data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
       {{ article.content }}
     </div><!-- /.entry-content -->
+
+    <div class="article-ad">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- responsive -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8481391240785119"
+           data-ad-slot="3238871784"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     {# {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %} #}
     {% if DISQUS_SITENAME and article.status != "draft" %}
