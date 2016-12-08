@@ -16,11 +16,12 @@
 	top: 120px;
 	left: 240px;
 }
-@media (min-width: 990px) and  (max-width: 1200px) {
+@media (min-width: 990px) and (max-width: 1200px) {
 	#look { left: 140px; }
 }
 @media (max-width: 990px) {
-	#look { left: 30px; }
+	#look { left: 30px; display: none; }
+  #banner { display: none; }
 }
 #contentinfo {
 	height: 200px;
