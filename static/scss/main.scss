@@ -42,7 +42,7 @@
 	text-decoration: none;
 }
 #content article .post-info {
-	padding: 5px 50px;
+	//padding: 5px 50px;
 	margin: 0 10px 25px;
 	background-color: #eee;
 }
@@ -99,6 +99,8 @@
 #content .icon-category {
 	animation: spin 0.5s 1 ease-in-out;
 	-webkit-animation: spin 0.5s 1 ease-in-out;
+  animation-delay: 1.5s;
+  -weblit-animation-delay: 1.5s;
 }
 @keyframes spin {
 	0% { transform: rotate(0deg);}
@@ -263,13 +265,9 @@ table {
 
 .entry-content {
   h1 {
-    margin: 40px 0 40px;
-	/*padding: 0 0 5px;*/
+  margin: 40px 0 40px;
 	border-bottom: 10px solid #ccc;
-	padding: 10px 20px 10px;
-	/*background-color: #555;*/
-	/*color: #ddd;*/
-	/*border-radius: 10px;*/
+	padding: 10px 0px 10px;
   }
   h1:before,
   h2:before,
