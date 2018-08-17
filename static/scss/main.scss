@@ -47,16 +47,18 @@ img {
 	text-decoration: none;
 }
 #content article .post-info {
-	//padding: 5px 50px;
 	margin: 0 10px 25px;
 	background-color: #eee;
+  padding: 25px 25px 10px;
+  background: radial-gradient(#ddd, #e6e6e6, #fafafa);
+  border-radius: 33px;
 }
 #content article .post-info ul li {
 	padding: 1px 0;
 }
 #content article .post-info ul li span {
 	display: inline-block;
-	width: 100px;
+	width: 80px;
 }
 #content article {
 	position: relative;
@@ -272,7 +274,7 @@ table {
 .entry-content {
   h1 {
   margin: 40px 0 40px;
-	border-bottom: 10px solid #ccc;
+	border-bottom: 10px solid #777;
 	padding: 10px 0px 10px;
   }
   h1:before,
